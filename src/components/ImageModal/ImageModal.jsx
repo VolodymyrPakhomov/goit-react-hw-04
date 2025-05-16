@@ -1,12 +1,25 @@
+import { useEffect } from 'react';
 import Modal from 'react-modal';
 import css from './ImageModal.module.css';
 
-Modal.setAppElement('#root'); // Необхідно для доступності
+Modal.setAppElement('#root'); // Для доступности
 
 function ImageModal({ isOpen, onClose, image }) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
   if (!image) return null;
 
-  const { urls, alt_description, user, likes, description } = image;
+  const { urls, alt_description, likes } = image;
 
   return (
     <Modal
