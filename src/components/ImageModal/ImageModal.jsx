@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import styles from './ImageModal.module.css';
+import css from './ImageModal.module.css';
 
 Modal.setAppElement('#root'); // Необхідно для доступності
 
@@ -12,20 +12,14 @@ function ImageModal({ isOpen, onClose, image }) {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className={styles.modal}
-      overlayClassName={styles.overlay}
+      className={css.modal}
+      overlayClassName={css.overlay}
     >
-      <button className={styles.closeBtn} onClick={onClose}>
+      <button className={css.closeBtn} onClick={onClose}>
         ✖
       </button>
-      <img src={urls.regular} alt={alt_description} className={styles.image} />
-      <div className={styles.info}>
-        <p>
-          <strong>Description:</strong> {description || 'N/A'}
-        </p>
-        <p>
-          <strong>Author:</strong> {user.name}
-        </p>
+      <img src={urls.regular} alt={alt_description} className={css.image} />
+      <div className={css.info}>
         <p>
           <strong>Likes:</strong> {likes}
         </p>
