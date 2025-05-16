@@ -1,0 +1,31 @@
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0c1748;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 250ms ease, transform 150ms ease;
+  box-shadow: 0 4px 10px rgba(36, 36, 36, 0.1);
+}
+
+.button:hover,
+.button:focus {
+  background-color: #283ab3;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  background-color: #2684db;
+  transform: translateY(0);
+}
+
+/* Центрируем обёртку с кнопкой */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
